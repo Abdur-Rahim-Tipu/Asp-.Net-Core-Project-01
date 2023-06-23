@@ -1,0 +1,15 @@
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

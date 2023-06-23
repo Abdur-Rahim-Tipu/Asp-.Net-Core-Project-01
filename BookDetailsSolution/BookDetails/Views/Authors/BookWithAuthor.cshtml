@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BookDetails.Models.Author>
+
+@{
+    ViewData["Title"] = "BookWithAuthor";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+            <h4 class="mt-1 ms-2">Book Wise  Authors </h4>
+            <div>
+                <a asp-controller="Publishers" asp-action="Index" class="btn  btn-sm bg-light p-2">Back</a>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>AuthorName</th>
+                    <th>BirthDate</th>
+                    <th>WebsiteUrl</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><img src="~/AuthorImages/@item.Picture" class="rounded-circle" style="width:40px" /></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AuthorName)
+                        </td>
+                        <td>
+                            @item.BirthDate.ToString("dd-MMM-yyyy")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebsiteUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+
+                        <td>
+                            <a asp-controller="Publishers" asp-action="Edit" asp-route-id="@item.AuthorId" class="btn btn-success btn-sm">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.AuthorId" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

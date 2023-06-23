@@ -1,0 +1,211 @@
+﻿@model BookDetails.Models.Publisher
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-4 ">
+            <h4 class="mt-1 ms-2 ">Master Details</h4>
+            <div>
+
+                <a asp-controller="Publishers" asp-action="Index" class="btn  btn-sm bg-light p-2">List</a>
+            </div>
+        </div>
+
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex text-white bg-info p-1 col-6 mb-2">
+                <h6 class="mt-1 ms-2 text-center">New Publisher</h6>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-2">
+                    <label asp-for="PublisherName" class="control-label"></label>
+                </div>
+
+                <div class="col-4">
+                    <input asp-for="PublisherName" class="form-control" />
+                    <span asp-validation-for="PublisherName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-2">
+                    <label asp-for="WebsiteUrl" class="control-label"></label>
+                </div>
+
+                <div class="col-4">
+                    <input asp-for="WebsiteUrl" class="form-control" />
+                    <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-2">
+                    <label asp-for="Phone" class="control-label"></label>
+                </div>
+
+                <div class="col-4">
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <div class="col-2">
+                    <label asp-for="Email" class="control-label"></label>
+                </div>
+
+                <div class="col-4">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                @for (int i = 0; i < Model.Books.Count(); i++)
+                {
+                    <div class="col-6">
+                        <div class="d-flex  text-white bg-info p-1 mb-4">
+                            <h6 class="mt-1 ms-2 text-center">Add Book</h6>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].Title, new { @class = "col-form-label" })
+                            </div>
+
+                            <div class="col-8">
+                                @Html.TextBoxFor(b => b.Books[i].Title, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(b => b.Books[i].Title, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].PublishDate, new { @class = "col-form-label" })
+                            </div>
+                            
+                            <div class="col-8">
+                                <input asp-for="Books[i].PublishDate" type="date" class="form-control" />
+                                @Html.ValidationMessageFor(b => b.Books[i].PublishDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].TotalPage, new { @class = "col-form-label" })
+                            </div>
+                            
+                            <div class="col-8">
+                                @Html.TextBoxFor(b => b.Books[i].TotalPage, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(b => b.Books[i].TotalPage, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].CoverPrice, new { @class = "col-form-label" })
+                            </div>
+                           
+                            <div class="col-8">
+                                @Html.TextBoxFor(b => b.Books[i].CoverPrice, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(b => b.Books[i].CoverPrice, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].IsStock, new { @class = "col-form-label " })
+                            </div>
+                          
+                            <div class="col-8">
+                                @Html.CheckBoxFor(b => b.Books[i].IsStock, new { @class = "mt-3" })
+
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <div class="col-4">
+                                @Html.LabelFor(b => b.Books[i].CoverPage, new { @class = "col-form-label " })
+                            </div>
+                            
+                            <div class="col-8">
+                                @Html.TextBoxFor(b => b.Books[i].CoverImage, new { @class = "form-control", @type="file" })
+                                @Html.ValidationMessageFor(b => b.Books[i].CoverPage, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    @for (int j = 0; j < Model.Books[i].Authors.Count(); j++)
+                    {
+                        <div class="col-6">
+                            <div class="d-flex  text-white bg-info p-1 mb-4">
+                                <h6 class="mt-1 ms-2 text-center">Add Author</h6>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].AuthorName, new { @class = "col-form-label" })
+                                </div>
+                                
+                                <div class="col-8">
+                                    @Html.TextBoxFor(a => a.Books[i].Authors[i].AuthorName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].AuthorName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].BirthDate, new { @class = "col-form-label" })
+                                </div>
+                                <div class="col-8">
+                                   
+                                    <input asp-for="Books[i].Authors[i].BirthDate" type="date" class="form-control" />
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].BirthDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].WebsiteUrl, new { @class = "col-form-label" })
+                                </div>
+                                
+                                <div class="col-8">
+                                    @Html.TextBoxFor(a => a.Books[i].Authors[i].WebsiteUrl, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].WebsiteUrl, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].Phone, new { @class = "col-form-label" })
+                                </div>
+                               
+                                <div class="col-8">
+                                    @Html.TextBoxFor(a => a.Books[i].Authors[i].Phone, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].Email, new { @class = "col-form-label" })
+                                </div>
+                                
+                                <div class="col-8">
+                                    @Html.TextBoxFor(a => a.Books[i].Authors[i].Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    @Html.LabelFor(a => a.Books[i].Authors[i].Picture, new { @class = "col-form-label " })
+                                </div>
+                                
+                                <div class="col-8">
+                                    
+                                    @Html.TextBoxFor(b => b.Books[i].Authors[i].AuthorImage, new { @class = "form-control", @type="file" })
+                                    @Html.ValidationMessageFor(a => a.Books[i].Authors[i].Picture, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                         </div>
+                    }
+                }
+            </div>
+
+
+            <div class="justify-content-end">
+                <button type="submit" class="btn btn-primary btn-sm text-end">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+

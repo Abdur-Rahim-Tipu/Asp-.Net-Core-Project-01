@@ -1,0 +1,98 @@
+﻿@model BookDetails.ViewModels.AuthorEditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div>
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2">
+            <h4 class="mt-1 ms-2 ">Edit Author</h4>
+            <div>
+                <a asp-controller="Books" asp-action="Index" class="btn  btn-sm bg-light p-2">List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(b=>b.AuthorId)
+            <div class="form-group row mb-1">
+                <div class="col-3 ">
+                    @Html.LabelFor(x => x.Book, new { @class = "col-form-label col-2" })
+                </div>
+
+                <div class="col-6">
+                    @Html.DropDownListFor(x => x.BookId, new SelectList(ViewBag.books, "BookId", "Title"), "Select one", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(x => x.BookId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="AuthorName" class="control-label"></label>
+                </div>
+
+                <div class="col-6">
+                    <input asp-for="AuthorName" class="form-control" />
+                    <span asp-validation-for="AuthorName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="BirthDate" class="control-label"></label>
+                </div>
+
+                <div class="col-6">
+                    <input asp-for="BirthDate" type="date" class="form-control" />
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="WebsiteUrl" class="control-label"></label>
+                </div>
+
+                <div class="col-6">
+                    <input asp-for="WebsiteUrl" class="form-control" />
+                    <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="Phone" class="control-label"></label>
+                </div>
+
+                <div class="col-6">
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="Email" class="control-label"></label>
+                </div>
+
+                <div class="col-6">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-3">
+                    <label asp-for="Picture" class="control-label"></label>
+                </div>
+
+                <div class="col-6 ">
+                    @Html.TextBoxFor(x => x.Picture, new { @class = "form-control", @type="file" })
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="justify-content-end offset-2">
+                <button type="submit" class="btn btn-primary btn-sm text-end">Edit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4">
+        <img src="~/AuthorImages/@ViewBag.Picture" class="img-thumbnail" style="width:200px" />
+    </div>
+</div>
+

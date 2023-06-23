@@ -1,0 +1,125 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@*    <title>@ViewData["Title"] - BookDetails</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BookDetails.styles.css" asp-append-version="true" />*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        body{
+            padding-top:70px;
+        }
+        .color1{
+            background-color:gainsboro;
+            color:white;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom fixed-top box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="nav-link mx-5" asp-area="" asp-controller="Home" asp-action="Dashboard"><i class="bi bi-list"></i><span>&nbsp;&nbsp;&nbsp;</span>Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">@Html.ActionLink("Logout", "Logout", "Accounts", new { }, new { @class = "nav-link" })</li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">@Html.ActionLink("Register", "Register", "Accounts", new { }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Login", "Login", "Accounts", new { }, new { @class = "nav-link" })</li>
+
+                            
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-auto bg-light shadow sticky-top">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                    <img src="/Pictures/images.png" style="width:60px; height:60px" class="img-thumbnail"/>
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Home" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                                
+                                <i class=" bi-house-door-fill fs-1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="Dashboard" asp-controller="Home" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                                
+                               
+                                <i class="bi bi-grid-3x3-gap-fill fs-1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                                <i class="bi-table fs-1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-action="Products" asp-controller="Home" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                                <i class="bi bi-cart4 fs-1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Customers">
+                                <i class="bi-people fs-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <a href="#"  class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="/Pictures/tipu.jpg" style="width:50px; height:50px" class="rounded-circle" />
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm p-3 min-vh-100">
+               @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - BookDetails - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+@*    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

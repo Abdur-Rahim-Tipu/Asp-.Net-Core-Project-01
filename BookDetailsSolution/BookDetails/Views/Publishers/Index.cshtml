@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BookDetails.Models.Publisher>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+            <h4 class="mt-1 ms-2">Publisher List</h4>
+            <div>
+                <a asp-controller="Publishers" asp-action="Create" class="btn  btn-sm bg-light p-2">Add</a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mb-1">
+            
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Publisher Name </th>
+                    <th> Website Url </th>
+                    <th> Phone </th>
+                    <th>Email </th>
+                    <th>Book</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="tr_d_@item.PublisherId">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PublisherName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebsiteUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            <a asp-controller="Books" asp-action="PublisherWithBook" asp-route-id="@item.PublisherId">Books</a>
+
+                        </td>
+                        <td>
+                            <a asp-controller="Publishers" asp-action="Edit" asp-route-id="@item.PublisherId" class="btn btn-success btn-sm">Edit</a>
+                            <button type="button" data-pk="@item.PublisherId" class="btn btn-danger btn-sm d-del">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+        $(".d-del").click(function(){
+            var id = $(this).data('pk');
+
+            if (confirm("Are you sure to Delete with Related Book and Author data?")) {
+                $.ajax({
+                    type:'post',
+                    url: '/Publishers/Delete/' + id,
+                    dataType:'json',
+                   success:r=>{
+
+                            console.log(r)
+                          $("#tr_d_"+id).remove();
+                          $("#tr_s_"+id).remove();
+                       
+                   }
+                })
+            }
+        })
+    </script>
+ }

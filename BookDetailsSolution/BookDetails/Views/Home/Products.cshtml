@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BookDetails.ViewModels.ListView>
+@{
+    ViewData["Title"] = "Products";
+}
+<div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+    <h6 class="mt-1 ms-2 ">buy your book</h6>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="bg-info text-light">
+            <th>Cover Page</th>
+            <th>Publisher</th>
+            <th>Book</th>
+            <th>PublishDate</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td><img src="~/BookImages/@p.CoverPage" class="img-thumbnail" style="width:40px" /></td>
+                <td>@p.PublisherName</td>
+                <td>@p.Title</td>
+                <td>@p.PublishDate.ToString("yyyy-MMM-dd")</td>
+                <td>@p.Price.ToString("0.00")</td>
+                <td>@p.AuthorName</td>
+                <th><a asp-action="Create" asp-controller="Orders"><i class="bi bi-cart4"></i></a></th>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

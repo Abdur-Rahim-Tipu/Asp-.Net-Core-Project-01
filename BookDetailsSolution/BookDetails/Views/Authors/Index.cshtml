@@ -1,0 +1,79 @@
+﻿@model IEnumerable<BookDetails.Models.Author>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+            <h4 class="mt-1 ms-2">Author List</h4>
+            <div>
+                <a asp-controller="Authors" asp-action="Create" class="btn  btn-sm bg-light p-2">Add</a>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>AuthorName</th>
+                    <th>BirthDate</th>
+                    <th>WebsiteUrl</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="tr_d_@item.AuthorId">
+                        <td><img src="~/AuthorImages/@item.Picture" class="rounded-circle" style="width:40px" /></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AuthorName)
+                        </td>
+                        <td>
+                            @item.BirthDate.ToString("dd-MMM-yyyy")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebsiteUrl)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+
+                        <td>
+                            <a asp-controller="Authors" asp-action="Edit" asp-route-id="@item.AuthorId" class="btn btn-success btn-sm">Edit</a>
+                            <button type="button" data-pk="@item.AuthorId" class="btn btn-danger btn-sm d-del">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+        $(".d-del").click(function () {
+            var id = $(this).data('pk');
+
+            if (confirm("Are you sure to delete?")) {
+                $.ajax({
+                    type: 'post',
+                    url: '/Authors/Delete/' + id,
+                    dataType: 'json',
+                    success: r => {
+
+                        console.log(r)
+                        $("#tr_d_" + id).remove();
+
+                    }
+                })
+            }
+        })
+    </script>
+ }

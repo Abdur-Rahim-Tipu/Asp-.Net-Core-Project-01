@@ -1,0 +1,97 @@
+﻿@model IEnumerable<BookDetails.ViewModels.OrderViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+            <h4 class="mt-1 ms-2">Order List</h4>
+            <div class="justify-content-between">
+                <a asp-controller="Orders" asp-action="Create" class="btn  btn-sm bg-light p-2">Add</a>
+                <a asp-controller="Reports" asp-action="AllOrders" class="btn  btn-sm bg-light p-2">Reporting</a>
+                
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CustomerName</th>
+                    <th>OrderDate</th>
+                    <th>Price</th>
+                    <th>DiscountRate</th>
+                    <th>Quantity</th>
+                    <th>TotalPrice</th>
+                    <th>DiscountAmount</th>
+                    <th>NetPay</th>
+                    <th>BookTitle</th>
+
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="tr_d_@item.OrderId">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerName)
+                        </td>
+                        <td>
+                            @item.OrderDate.ToString("dd-MMM-yyyy")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DiscountRate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DiscountAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NetPay)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookTitle)
+                        </td>
+                        <td>
+                            <a asp-controller="Orders" asp-action="Edit" asp-route-id="@item.OrderId" class="btn btn-success btn-sm">Edit</a>
+                            <button type="button" data-pk="@item.OrderId" class="btn btn-danger btn-sm d-del">Delete</button>
+
+                            
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+        $(".d-del").click(function () {
+            var id = $(this).data('pk');
+
+            if (confirm("Are you sure to delete?")) {
+                $.ajax({
+                    type: 'post',
+                    url: '/Books/Delete/' + id,
+                    dataType: 'json',
+                    success: r => {
+
+                        console.log(r)
+                        $("#tr_d_" + id).remove();
+
+                    }
+                })
+            }
+        })
+    </script>
+ }

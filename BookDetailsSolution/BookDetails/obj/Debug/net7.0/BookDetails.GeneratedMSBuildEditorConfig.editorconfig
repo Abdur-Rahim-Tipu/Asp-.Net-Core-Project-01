@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BookDetails
+build_property.RootNamespace = BookDetails
+build_property.ProjectDir = C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\BookDetails\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Rahim\Desktop\ASP Core\BookDetailsSolution\BookDetails
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Accounts/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Accounts/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Authors/BookWithAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xCb29rV2l0aEF1dGhvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Authors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Authors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Authors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Books/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Books/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Books/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Books/PublisherWithBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcUHVibGlzaGVyV2l0aEJvb2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Home/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Publishers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Publishers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Publishers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/AuthorEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEF1dGhvckVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/AuthorInsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEF1dGhvckluc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/BookEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJvb2tFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/BookInsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJvb2tJbnNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rahim/Desktop/ASP Core/BookDetailsSolution/BookDetails/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-gyc35if3r5

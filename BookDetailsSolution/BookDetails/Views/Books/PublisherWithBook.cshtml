@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BookDetails.Models.Book>
+
+@{
+    ViewData["Title"] = "PublisherWithBook";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between text-white bg-secondary p-1 mb-2 ">
+            <h4 class="mt-1 ms-2">Publisher Wise  Books </h4>
+            <div>
+                <a asp-controller="Publishers" asp-action="Index" class="btn  btn-sm bg-light p-2">Back</a>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Cover Page</th>
+                    <th>Title</th>
+                    <th>Publish Date</th>
+                    <th>Total Page</th>
+                    <th>Cover Price</th>
+                    <th>Is Stock?</th>
+                    <th>Author</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><img src="~/BookImages/@item.CoverPage" class="rounded-circle" style="width:40px" /></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @item.PublishDate.ToString("dd-MMM-yyyy")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPage)
+                        </td>
+                        <td>
+                            @item.CoverPrice.ToString("0.00")
+                        </td>
+                                                <td>
+                            @(item.IsStock ? "YES" : "NO")
+                        </td>
+                        <td>
+                            <a asp-controller="Authors" asp-action="BookWithAuthor" asp-route-id="@item.BookId">Authors</a>
+
+                        <td>
+                            <a asp-controller="Books" asp-action="Edit" asp-route-id="@item.BookId" class="btn btn-success btn-sm">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.BookId" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
